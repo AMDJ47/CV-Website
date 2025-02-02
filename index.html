@@ -6,15 +6,25 @@
     <title>Azael Letsoalo - Professional Profile</title>
     <link rel="stylesheet" href="cv.css">
 </head>
-<body>
+<body><style>
+    body {
+        background: linear-gradient(to bottom, #b3e5fc, #81d4fa) !important;
+    }
+</style>
     <header>
-        <h1>Azael Letsoalo</h1>
-        <p>Future Business Intelligence Expert</p>
+        <div class="hero">
+            <img src="cv pic2.jpeg" alt="Azael Letsoalo" class="profile-pic"> 
+            <div class="hero-text">
+                <h1>Azael Letsoalo</h1>
+                <p>Future Business Intelligence Expert</p>
+            </div>
+        </div>
     </header>
 
     <nav>
         <a href="#about">About</a>
         <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#interests">Interests</a>
@@ -22,12 +32,18 @@
     </nav>
 
     <div class="container">
-        <section id="about">
-            <h2>About</h2>
-            <p>Hello! I am Azael Letsoalo, a Bachelor in Computing student specializing in Business Intelligence. Passionate about technology, design, and innovation, I aim to create meaningful solutions that make a difference.</p>
-        </section>
+        <section id="about" class="card">
+            <h2>About Me</h2>
+            <p>p>Hello! I am Azael Letsoalo, a dedicated Bachelor in Computing student with a specialization in Business Intelligence. My journey in the tech world is driven by an insatiable curiosity for how data shapes decisions and transforms businesses.</p>
+    
+            <p>Passionate about technology, design, and innovation, I thrive on creating solutions that blend technical excellence with user-centric design. My interests span from data analysis and visualization to developing intuitive applications that solve real-world problems.</p>
+            
+            <p>With a strong foundation in programming languages like C#, R, SQL, and web technologies such as HTML, CSS, and JavaScript, I enjoy bringing ideas to life—whether it’s through dynamic dashboards, efficient databases, or sleek UI designs. Additionally, my proficiency in tools like Power BI, Figma, and Adobe Photoshop allows me to merge data with creativity effectively.</p>
+            
+            <p>My ultimate goal is to become a Business Intelligence expert who not only interprets data but also uncovers insights that drive strategic decisions. I am constantly learning, exploring new technologies, and seeking opportunities where I can make a meaningful impact in the ever-evolving world of tech.</p>
+         </section>
 
-        <section id="education">
+        <section id="education" class="card">
             <h2>Education</h2>
             <ul>
                 <li><strong>Belgium Campus ITversity</strong> (03/2021 - Present)<br>Bachelor's in Computing (Business Intelligence) - Graduation: 2025</li>
@@ -35,7 +51,14 @@
             </ul>
         </section>
 
-        <section id="skills">
+        <section id="experience" class="card">
+            <h2>Experience</h2>
+            <ul>
+                <li><strong>Intern Software Developer</strong> at BBD Rosebank  (02/01/2025 - Present)<br>
+            </ul>
+        </section>
+
+        <section id="skills" class="card">
             <h2>Key Skills</h2>
             <ul>
                 <li>Data Analysis & Visualization: Power BI, Microsoft Office</li>
@@ -46,7 +69,7 @@
             </ul>
         </section>
 
-        <section id="projects">
+        <section id="projects" class="card">
             <h2>Projects</h2>
             <ul>
                 <li><strong>Neyonz Music</strong> (07/2023 – Ongoing)<br>Music and streaming app UI</li>
@@ -54,12 +77,12 @@
             </ul>
         </section>
 
-        <section id="interests">
+        <section id="interests" class="card">
             <h2>Interests</h2>
             <p>Technology, Business, Cryptocurrency, Design</p>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="card">
             <h2>Contact</h2>
             <p>Email: <a href="mailto:azaelletsoalo@gmail.com">azaelletsoalo@gmail.com</a></p>
             <p>Phone: +27 81 339 7400</p>
@@ -69,7 +92,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Azael Letsoalo | Designed with care</p>
+        <!-- Footer content -->
     </footer>
 </body>
 </html>
