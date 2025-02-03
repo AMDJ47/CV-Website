@@ -1,5 +1,5 @@
 documen.addEventListener('DOMContentLoad',()=>
-const loacationElement = doument.getElementById('location');
+const locationElement = document.getElementById('location');
 const weatherElement = Document.getElementById('weather');
 
 const API_Key = '39ea3e45ab104c9db4286fe3281d54fe';
