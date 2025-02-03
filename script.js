@@ -12,7 +12,7 @@ function getWeather(position) {
 
     console.log(lat, lon); 
 
-    const apiKey = "a2b68b565de3741d35b12e190ceb4efb";
+    const apiKey = "1395d04198d15dc41b08a2e7ab20be63";
     const url = https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric;
 
     fetch(url)
