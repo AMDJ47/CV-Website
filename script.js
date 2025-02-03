@@ -18,10 +18,10 @@ function getWeather(position) {
     fetch(url)
         .then((response) => response.json())
         .then((data) => {
-            const location = data.name;
-            const country = data.sys.country;
-            const description = data.weather[0].description;
-            const temperature = data.main.temp;
+            let location = data.name;
+            let country = data.sys.country;
+            let description = data.weather[0].description;
+            let temperature = data.main.temp;
 
             document.getElementById("weather").innerHTML = `
                 <h2>${location}, ${country}</h2>
