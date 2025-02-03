@@ -1,32 +1,27 @@
+// Function to fetch weather based on latitude and longitude using WeatherAPI
 function fetchWeather(latitude, longitude) {
-    const locationUrl = https://www.metaweather.com/api/location/search/?lattlong=${latitude},${longitude};
+    // WeatherAPI URL (No API key required)
+    const weatherUrl = https://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q=${latitude},${longitude}&aqi=no;
 
-    fetch(locationUrl)
+    fetch(weatherUrl)
         .then(response => response.json())
         .then(data => {
-            if (data.length > 0) {
-                const location = data[0].title; 
-                const woeid = data[0].woeid;    
-                const weatherUrl = https://www.metaweather.com/api/location/${woeid}/;
+            if (data.location) {
+                const location = data.location.name; // Location name
+                const weatherDescription = data.current.condition.text; // Weather description
+                const temperature = data.current.temp_c; // Temperature in Celsius
 
-                fetch(weatherUrl)
-                    .then(response => response.json())
-                    .then(weatherData => {
-                        const weatherDescription = weatherData.consolidated_weather[0].weather_state_name;
-                        const temperature = weatherData.consolidated_weather[0].the_temp;
-
-                        document.getElementById('location').innerText = Location: ${location};
-                        document.getElementById('Weather').innerText = Weather: ${weatherDescription};
-                        document.getElementById('temperature').innerText = Temperature: ${temperature.toFixed(1)}°C;
-                    })
-                    .catch(error => console.error('Error fetching weather data:', error));
+                // Display the weather data
+                document.getElementById('Weather').innerText = Weather: ${weatherDescription};
+                document.getElementById('temperature').innerText = Temperature: ${temperature}°C;
             } else {
-                alert('Location not found!');
+                alert('Weather data not found!');
             }
         })
-        .catch(error => console.error('Error fetching location:', error));
+        .catch(error => console.error('Error fetching weather data:', error));
 }
 
+// Function to get the user's current geolocation
 function getGeolocation() {
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -44,4 +39,5 @@ function getGeolocation() {
     }
 }
 
+// Call getGeolocation when the page loads
 getGeolocation();
