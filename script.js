@@ -1,30 +1,33 @@
-console.log("Script is running...");
+document.addEventListener("DOMContentLoaded", function () {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(getWeather);
+    } else {
+        alert("Geolocation is not supported by your browser.");
+    }
+});
 
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-        console.log("Latitude:", position.coords.latitude);
-        console.log("Longitude:", position.coords.longitude);
+function getWeather(position) {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
 
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        const weatherUrl = https://wttr.in/${latitude},${longitude}?format=j1;
+    console.log(lat, lon); // Logs coordinates for debugging
 
-        fetch(weatherUrl)
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(data) {
-              
+    const apiKey = "a2b68b565de3741d35b12e190ceb4efb";
+    const url = https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric;
 
-                const weatherData = data.current_condition[0];
-                const weatherDescription = weatherData.weatherDesc[0].value;
-                const temperature = weatherData.temp_C;
+    fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+            const location = data.name;
+            const country = data.sys.country;
+            const description = data.weather[0].description;
+            const temperature = data.main.temp;
 
-                document.getElementById('location').innerText = Latitude: ${latitude}, Longitude: ${longitude};
-                document.getElementById('Weather').innerText = Weather: ${weatherDescription};
-                document.getElementById('temperature').innerText = Temperature: ${temperature}°C;
-            });
-    });
-} else {
-    console.log("Geolocation is not supported.");
+            document.getElementById("weather").innerHTML = `
+                <h2>${location}, ${country}</h2>
+                <p>${description.toUpperCase()}</p>
+                <p>Temperature: ${temperature}°C</p>
+            `;
+        })
+        .catch((error) => console.error("Error:", error));
 }
