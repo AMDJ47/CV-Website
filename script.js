@@ -13,7 +13,7 @@ function getWeather(position) {
     console.log(lat, lon); 
 
     const apiKey = '82e901d87b6700b1e0f00c5b30f0aba0';
-    const url = 'https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric';
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
     fetch(url)
         .then((response) => response.json())
@@ -24,9 +24,10 @@ function getWeather(position) {
             let temperature = data.main.temp;
 
             document.getElementById("weather").innerHTML = `
-                <p2>${location}, ${country}</hp>
+                <p><strong>${location}, ${country}</strong></p>
                 <p>${description.toUpperCase()}</p>
-                <p>Temperature: ${temperature}°C</p>s;
+                <p>Temperature: ${temperature}°C</p>
+            `;
         })
         .catch((error) => console.error("Error:", error));
 }
