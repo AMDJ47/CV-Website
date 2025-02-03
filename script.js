@@ -24,7 +24,7 @@ function getWeather(position) {
             let temperature = data.main.temp;
 
             document.getElementById("weather").innerHTML = `
-                <h2>${location}, ${country}</h2>
+                <p2>${location}, ${country}</hp>
                 <p>${description.toUpperCase()}</p>
                 <p>Temperature: ${temperature}°C</p>
             `;
