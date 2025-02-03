@@ -1,17 +1,15 @@
 function fetchWeather(latitude, longitude) {
     const weatherUrl = https://wttr.in/${latitude},${longitude}?format=j1;
 
-    console.log(Fetching weather for coordinates: ${latitude}, ${longitude});
-
     fetch(weatherUrl)
         .then(response => response.json())
         .then(data => {
-            console.log("Weather API response:", data); // Debugging line
+            console.log(data); // Debugging to see the API response
 
             const weatherData = data.current_condition[0];
             const location = ${latitude.toFixed(2)}, ${longitude.toFixed(2)};
             const weatherDescription = weatherData.weatherDesc[0].value;
-            const temperature = weatherData.temp_C; // Temperature in Celsius
+            const temperature = weatherData.temp_C;
 
             // Display the weather data
             document.getElementById('location').innerText = Location: ${location};
@@ -19,15 +17,11 @@ function fetchWeather(latitude, longitude) {
             document.getElementById('temperature').innerText = Temperature: ${temperature}°C;
         });
 }
-
 function getGeolocation() {
-    if ("geolocation" in navigator) {
+    if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
-
-            console.log(Geolocation retrieved: Latitude ${latitude}, Longitude ${longitude});
-
             fetchWeather(latitude, longitude);
         });
     }
