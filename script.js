@@ -1,30 +1,51 @@
-document.addEventListener('DOMContentLoad',() => {
-const locationElement = document.getElementById('location');
-const weatherElement = document.getElementById('weather');
 
-const API_Key = '39ea3e45ab104c9db4286fe3281d54fe';
-fetch('https://ipapi.co/json/')
-.then(response => response.json())
-.then data => {
-  const{ city,country_name,latitude, longitude} = data;
-locationElement.textContent = 'Location : ${city}, ${country_name}';
+function fetchWeather(latitude, longitude) {
+    const locationUrl = https://www.metaweather.com/api/location/search/?lattlong=${latitude},${longitude};
 
-Fetch('https://api.geoapify.com/v1/weather/current?lat=$(latitude}&lon=${longitude}&apiKey{39ea3e45ab104c9db4286fe3281d54fe')
-.then(response => response.json())
-.then(weatherdData => {
-  const temperature = weatherData.properties.temperature;
-  const description = weatherData.properties.weather.description;
+    fetch(locationUrl)
+        .then(response => response.json())
+        .then(data => {
+            if (data.length > 0) {
+                const location = data[0].title; // Location name
+                const woeid = data[0].woeid;    // WOEID of the location
 
-  weatherElement.textContent='Weather: ${temperature} degrees, ${description}';
-});
-.catch(() =>{
-  weatherElement.textContent = 'Unable to fetch weather data.';
-});
+                // Now, fetch the current weather using the WOEID
+                const weatherUrl = https://www.metaweather.com/api/location/${woeid}/;
 
-})
-.catch(() => {
-  locationElement.textContent = 'Unable to fecth location data.';
-});
-  
+                fetch(weatherUrl)
+                    .then(response => response.json())
+                    .then(weatherData => {
+                        const weatherDescription = weatherData.consolidated_weather[0].weather_state_name;
+                        const temperature = weatherData.consolidated_weather[0].the_temp;
 
-  
+                        // Display the weather data
+                        document.getElementById('location').innerText = Location: ${location};
+                        document.getElementById('weather').innerText = Weather: ${weatherDescription};
+                        document.getElementById('temperature').innerText = Temperature: ${temperature.toFixed(1)}°C;
+                    })
+                    .catch(error => console.error('Error fetching weather data:', error));
+            } else {
+                alert('Location not found!');
+            }
+        })
+        .catch(error => console.error('Error fetching location:', error));
+}
+
+// Function to get the user's current geolocation
+function getGeolocation() {
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // Call the fetchWeather function with the user's coordinates
+            fetchWeather(latitude, longitude);
+        }, function(error) {
+            console.error("Error getting location: ", error);
+            alert("Failed to retrieve your location.");
+        });
+    } else {
+        alert("Geolocation is not supported by your browser.");
+    }
+}
+getGeolocation();
