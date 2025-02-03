@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function getWeather(position) {
-    const lat = position.coords.latitude;
     const lon = position.coords.longitude;
+    const lat = position.coords.latitude;
 
     console.log(lat, lon); 
 
@@ -26,8 +26,7 @@ function getWeather(position) {
             document.getElementById("weather").innerHTML = `
                 <p2>${location}, ${country}</hp>
                 <p>${description.toUpperCase()}</p>
-                <p>Temperature: ${temperature}°C</p>
-            `;
+                <p>Temperature: ${temperature}°C</p>s;
         })
         .catch((error) => console.error("Error:", error));
 }
