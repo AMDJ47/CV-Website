@@ -1,4 +1,3 @@
-
 function fetchWeather(latitude, longitude) {
     const locationUrl = https://www.metaweather.com/api/location/search/?lattlong=${latitude},${longitude};
 
@@ -6,10 +5,8 @@ function fetchWeather(latitude, longitude) {
         .then(response => response.json())
         .then(data => {
             if (data.length > 0) {
-                const location = data[0].title; // Location name
-                const woeid = data[0].woeid;    // WOEID of the location
-
-                // Now, fetch the current weather using the WOEID
+                const location = data[0].title; 
+                const woeid = data[0].woeid;    
                 const weatherUrl = https://www.metaweather.com/api/location/${woeid}/;
 
                 fetch(weatherUrl)
@@ -18,9 +15,8 @@ function fetchWeather(latitude, longitude) {
                         const weatherDescription = weatherData.consolidated_weather[0].weather_state_name;
                         const temperature = weatherData.consolidated_weather[0].the_temp;
 
-                        // Display the weather data
                         document.getElementById('location').innerText = Location: ${location};
-                        document.getElementById('weather').innerText = Weather: ${weatherDescription};
+                        document.getElementById('Weather').innerText = Weather: ${weatherDescription};
                         document.getElementById('temperature').innerText = Temperature: ${temperature.toFixed(1)}°C;
                     })
                     .catch(error => console.error('Error fetching weather data:', error));
@@ -31,7 +27,6 @@ function fetchWeather(latitude, longitude) {
         .catch(error => console.error('Error fetching location:', error));
 }
 
-// Function to get the user's current geolocation
 function getGeolocation() {
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -48,4 +43,5 @@ function getGeolocation() {
         alert("Geolocation is not supported by your browser.");
     }
 }
+
 getGeolocation();
