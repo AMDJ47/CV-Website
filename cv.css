@@ -1,15 +1,14 @@
-/* General Reset */
-* {
+ {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Apply background gradient to the whole page */
+
 body, html {
     height: 100%;
     margin: 0;
-    background: linear-gradient(to bottom, #b3e5fc, #81d4fa) !important; /* Gradient background applied */
+    background: linear-gradient(to bottom, #b3e5fc, #81d4fa) !important;
 }
 
 body {
@@ -20,7 +19,6 @@ body {
     margin: 0;
 }
 
-/* Hero Section */
 header {
     background: #222;
     color: #fff;
@@ -56,7 +54,6 @@ header {
     color: #ccc;
 }
 
-/* Navigation */
 nav {
     background: #333;
     color: #fff;
@@ -83,14 +80,12 @@ nav a:hover {
     border-radius: 5px;
 }
 
-/* Container */
 .container {
     max-width: 900px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
-/* Card Design */
 .card {
     background: #fff;
     padding: 1.5rem;
@@ -104,7 +99,6 @@ nav a:hover {
     transform: translateY(-5px);
 }
 
-/* Section Titles */
 h2 {
     color: #333;
     border-left: 5px solid #4CAF50;
@@ -113,7 +107,6 @@ h2 {
     font-size: 1.8rem;
 }
 
-/* Lists */
 ul {
     list-style-type: none;
     padding: 0;
@@ -132,7 +125,6 @@ ul li:hover {
     background: #f0f0f0;
 }
 
-/* Contact Links */
 a {
     color: #4CAF50;
     text-decoration: none;
@@ -144,7 +136,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Footer */
 footer {
     background: #222;
     color: #fff;
@@ -153,7 +144,6 @@ footer {
     margin-top: 2rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .hero-text h1 {
         font-size: 2rem;
@@ -167,7 +157,7 @@ footer {
     .container {
         padding: 0 0.5rem;
     }
-#location-weather{
+    
     background :#f0f8ff;
     padding: 1rem;
     border:1px solid #4CAF50;
@@ -178,4 +168,12 @@ footer {
     #location, #weather{
         font-weight:bold;
         margin: 0.5rem 0;
+}
+#weather {
+    font-size: 18px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
 }
