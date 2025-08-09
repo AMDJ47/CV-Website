@@ -62,12 +62,18 @@ body {
 }
 
 .nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
   font-size: 1.5rem;
   font-weight: 800;
   background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  padding: 0.5rem 1rem;
 }
 
 .nav-logo span {
@@ -311,7 +317,7 @@ body {
   color: var(--white);
 }
 
-.weather-card:hover {
+.references-card:hover {
   background: var(--tertiary-gradient);
   color: var(--white);
 }
@@ -709,27 +715,6 @@ body {
   text-decoration: underline;
 }
 
-.weather-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
-.weather-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  border-radius: 10px;
-  font-weight: 500;
-}
-
-.weather-item i {
-  color: var(--text-secondary);
-  font-size: 1.2rem;
-}
-
 .footer {
   background: var(--primary-gradient);
   color: var(--white);
@@ -740,6 +725,63 @@ body {
 
 .footer p {
   margin: 0.5rem 0;
+}
+
+.reference-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 15px;
+  border-left: 5px solid var(--tertiary-gradient);
+  transition: var(--transition);
+}
+
+.reference-item:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow);
+}
+
+.reference-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--tertiary-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.reference-details {
+  flex: 1;
+}
+
+.reference-details h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.reference-email,
+.reference-phone {
+  margin: 0.5rem 0;
+  color: var(--text-secondary);
+}
+
+.reference-email a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.reference-email a:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
@@ -815,10 +857,6 @@ body {
   .languages-grid {
     grid-template-columns: 1fr;
   }
-
-  .weather-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 480px) {
@@ -839,10 +877,6 @@ body {
     width: 40px;
     height: 40px;
     font-size: 1rem;
-  }
-
-  .weather-grid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -870,8 +904,7 @@ html {
     background: var(--white) !important;
   }
 
-  .navbar,
-  .weather-section {
+  .navbar {
     display: none;
   }
 
