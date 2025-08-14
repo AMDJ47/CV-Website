@@ -107,7 +107,6 @@ body {
 
 .nav-link:hover {
   background: var(--lilac-hover);
-  color: var(--white);
   transform: translateY(-2px);
 }
 
@@ -292,36 +291,6 @@ body {
 .references-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-hover);
-}
-
-.card:hover h2,
-.card:hover h3,
-.card:hover h4,
-.card:hover p,
-.card:hover span,
-.card:hover li,
-.card:hover strong,
-.card:hover .company,
-.card:hover .duration,
-.card:hover .location,
-.card:hover .project-duration,
-.card:hover .language-name,
-.card:hover .institution {
-  color: var(--text-primary) !important;
-}
-
-.card:hover .responsibilities li,
-.card:hover .project-item li,
-.card:hover .contact-info,
-.card:hover .reference-email,
-.card:hover .reference-phone {
-  color: var(--text-secondary) !important;
-}
-
-.card:hover .duration,
-.card:hover .location,
-.card:hover .project-duration {
-  color: var(--text-light) !important;
 }
 
 .card-header {
