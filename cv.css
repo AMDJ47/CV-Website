@@ -313,50 +313,6 @@ body {
   background: var(--tertiary-gradient);
 }
 
-/* Ensure all text stays original color on card hover */
-.card:hover h2,
-.card:hover h3,
-.card:hover h4,
-.card:hover p,
-.card:hover span,
-.card:hover li,
-.card:hover strong,
-.card:hover .company,
-.card:hover .duration,
-.card:hover .location,
-.card:hover .project-duration,
-.card:hover .language-name,
-.card:hover .institution,
-.card:hover .experience-content h3,
-.card:hover .project-header h3,
-.card:hover .responsibilities li,
-.card:hover .project-item li,
-.card:hover .project-item p {
-  color: var(--text-primary) !important;
-}
-
-.card:hover .company,
-.card:hover .responsibilities li,
-.card:hover .project-item li,
-.card:hover .contact-info,
-.card:hover .reference-email,
-.card:hover .reference-phone {
-  color: var(--text-secondary) !important;
-}
-
-.card:hover .duration,
-.card:hover .location,
-.card:hover .project-duration {
-  color: var(--text-light) !important;
-}
-
-.card:hover .card-header i {
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 .card-header {
   padding: 2rem 2rem 1rem;
   display: flex;
@@ -574,7 +530,6 @@ body {
 
 .skill-tag:hover {
   background: var(--primary-gradient);
-  color: var(--white);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
@@ -748,7 +703,6 @@ body {
 }
 
 .contact-info a:hover {
-  color: var(--text-primary);
   text-decoration: underline;
 }
 
@@ -836,7 +790,6 @@ body {
 }
 
 .reference-email a:hover {
-  color: var(--text-primary);
   text-decoration: underline;
 }
 
