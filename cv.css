@@ -107,7 +107,7 @@ body {
 
 .nav-link:hover {
   background: var(--lilac-hover);
-  color: var(--white);
+  color: var(--text-primary);
   transform: translateY(-2px);
 }
 
@@ -282,46 +282,52 @@ body {
   box-shadow: var(--shadow-hover);
 }
 
-.about-card:hover,
-.experience-card:hover,
-.education-card:hover,
-.skills-card:hover,
-.projects-card:hover,
-.languages-card:hover,
-.contact-card:hover,
-.references-card:hover {
+.about-card:hover {
+  background: var(--secondary-gradient);
   transform: translateY(-10px);
   box-shadow: var(--shadow-hover);
 }
 
-.card:hover h2,
-.card:hover h3,
-.card:hover h4,
-.card:hover p,
-.card:hover span,
-.card:hover li,
-.card:hover strong,
-.card:hover .company,
-.card:hover .duration,
-.card:hover .location,
-.card:hover .project-duration,
-.card:hover .language-name,
-.card:hover .institution {
-  color: var(--text-primary) !important;
+.experience-card:hover {
+  background: var(--tertiary-gradient);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
 }
 
-.card:hover .responsibilities li,
-.card:hover .project-item li,
-.card:hover .contact-info,
-.card:hover .reference-email,
-.card:hover .reference-phone {
-  color: var(--text-secondary) !important;
+.education-card:hover {
+  background: var(--quaternary-gradient);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
 }
 
-.card:hover .duration,
-.card:hover .location,
-.card:hover .project-duration {
-  color: var(--text-light) !important;
+.skills-card:hover {
+  background: var(--quinary-gradient);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.projects-card:hover {
+  background: var(--senary-gradient);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.languages-card:hover {
+  background: var(--septenary-gradient);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.contact-card:hover {
+  background: var(--octonary-gradient);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.references-card:hover {
+  background: var(--rose-hover);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
 }
 
 .card-header {
@@ -715,7 +721,6 @@ body {
 }
 
 .contact-info a:hover {
-  color: var(--text-primary);
   text-decoration: underline;
 }
 
@@ -803,7 +808,6 @@ body {
 }
 
 .reference-email a:hover {
-  color: var(--text-primary);
   text-decoration: underline;
 }
 
