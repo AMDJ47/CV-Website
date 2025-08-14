@@ -17,7 +17,7 @@
   --lilac-hover: linear-gradient(135deg, #c7a8ff 0%, #e8d5ff 100%);
   --coral-hover: linear-gradient(135deg, #ff9a8b 0%, #ffd3a5 100%);
   --mint-hover: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
-  --peach-hover: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
+  --peach-hover: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
   --rose-hover: linear-gradient(135deg, #f8bbd9 0%, #e8a5c8 100%);
   --sky-hover: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%);
   --sunset-hover: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
@@ -107,7 +107,6 @@ body {
 
 .nav-link:hover {
   background: var(--lilac-hover);
-  color: var(--text-primary);
   transform: translateY(-2px);
 }
 
@@ -283,51 +282,79 @@ body {
 }
 
 .about-card:hover {
-  background: var(--secondary-gradient);
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
+  background: var(--lilac-hover);
 }
 
 .experience-card:hover {
-  background: var(--tertiary-gradient);
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
+  background: var(--coral-hover);
 }
 
 .education-card:hover {
-  background: var(--quaternary-gradient);
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
+  background: var(--mint-hover);
 }
 
 .skills-card:hover {
-  background: var(--quinary-gradient);
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
+  background: var(--peach-hover);
 }
 
 .projects-card:hover {
-  background: var(--senary-gradient);
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
+  background: var(--rose-hover);
 }
 
 .languages-card:hover {
-  background: var(--septenary-gradient);
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
+  background: var(--sky-hover);
 }
 
 .contact-card:hover {
-  background: var(--octonary-gradient);
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
+  background: var(--sunset-hover);
 }
 
 .references-card:hover {
-  background: var(--rose-hover);
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
+  background: var(--tertiary-gradient);
+}
+
+/* Ensure all text stays original color on card hover */
+.card:hover h2,
+.card:hover h3,
+.card:hover h4,
+.card:hover p,
+.card:hover span,
+.card:hover li,
+.card:hover strong,
+.card:hover .company,
+.card:hover .duration,
+.card:hover .location,
+.card:hover .project-duration,
+.card:hover .language-name,
+.card:hover .institution,
+.card:hover .experience-content h3,
+.card:hover .project-header h3,
+.card:hover .responsibilities li,
+.card:hover .project-item li,
+.card:hover .project-item p {
+  color: var(--text-primary) !important;
+}
+
+.card:hover .company,
+.card:hover .responsibilities li,
+.card:hover .project-item li,
+.card:hover .contact-info,
+.card:hover .reference-email,
+.card:hover .reference-phone {
+  color: var(--text-secondary) !important;
+}
+
+.card:hover .duration,
+.card:hover .location,
+.card:hover .project-duration {
+  color: var(--text-light) !important;
+}
+
+.card:hover .card-header i {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .card-header {
@@ -500,7 +527,7 @@ body {
 }
 
 .skill-category {
-  background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   padding: 1.5rem;
   border-radius: 15px;
   border-top: 4px solid var(--primary-gradient);
@@ -721,6 +748,7 @@ body {
 }
 
 .contact-info a:hover {
+  color: var(--text-primary);
   text-decoration: underline;
 }
 
@@ -808,6 +836,7 @@ body {
 }
 
 .reference-email a:hover {
+  color: var(--text-primary);
   text-decoration: underline;
 }
 
