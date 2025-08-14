@@ -17,7 +17,7 @@
   --lilac-hover: linear-gradient(135deg, #c7a8ff 0%, #e8d5ff 100%);
   --coral-hover: linear-gradient(135deg, #ff9a8b 0%, #ffd3a5 100%);
   --mint-hover: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
-  --peach-hover: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  --peach-hover: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
   --rose-hover: linear-gradient(135deg, #f8bbd9 0%, #e8a5c8 100%);
   --sky-hover: linear-gradient(135deg, #a8e6cf 0%, #88d8c0 100%);
   --sunset-hover: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
@@ -107,6 +107,7 @@ body {
 
 .nav-link:hover {
   background: var(--lilac-hover);
+  color: var(--white);
   transform: translateY(-2px);
 }
 
@@ -276,41 +277,51 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.about-card:hover {
-  background: var(--lilac-hover);
-}
-
-.experience-card:hover {
-  background: var(--coral-hover);
-}
-
-.education-card:hover {
-  background: var(--mint-hover);
-}
-
-.skills-card:hover {
-  background: var(--peach-hover);
-}
-
-.projects-card:hover {
-  background: var(--rose-hover);
-}
-
-.languages-card:hover {
-  background: var(--sky-hover);
-}
-
-.contact-card:hover {
-  background: var(--sunset-hover);
-}
-
-.references-card:hover {
-  background: var(--tertiary-gradient);
-}
-
 .card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-hover);
+}
+
+.about-card:hover,
+.experience-card:hover,
+.education-card:hover,
+.skills-card:hover,
+.projects-card:hover,
+.languages-card:hover,
+.contact-card:hover,
+.references-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card:hover h2,
+.card:hover h3,
+.card:hover h4,
+.card:hover p,
+.card:hover span,
+.card:hover li,
+.card:hover strong,
+.card:hover .company,
+.card:hover .duration,
+.card:hover .location,
+.card:hover .project-duration,
+.card:hover .language-name,
+.card:hover .institution {
+  color: var(--text-primary) !important;
+}
+
+.card:hover .responsibilities li,
+.card:hover .project-item li,
+.card:hover .contact-info,
+.card:hover .reference-email,
+.card:hover .reference-phone {
+  color: var(--text-secondary) !important;
+}
+
+.card:hover .duration,
+.card:hover .location,
+.card:hover .project-duration {
+  color: var(--text-light) !important;
 }
 
 .card-header {
@@ -436,13 +447,6 @@ body {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   border-radius: 15px;
   border-left: 5px solid var(--tertiary-gradient);
-  transition: var(--transition);
-}
-
-.education-item:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
-  background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
 }
 
 .education-icon {
@@ -495,13 +499,6 @@ body {
   border-radius: 15px;
   border-top: 4px solid var(--primary-gradient);
   text-align: center;
-  transition: var(--transition);
-}
-
-.skill-category:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
-  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
 }
 
 .skill-icon {
@@ -544,6 +541,7 @@ body {
 
 .skill-tag:hover {
   background: var(--primary-gradient);
+  color: var(--white);
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
@@ -717,6 +715,7 @@ body {
 }
 
 .contact-info a:hover {
+  color: var(--text-primary);
   text-decoration: underline;
 }
 
@@ -804,6 +803,7 @@ body {
 }
 
 .reference-email a:hover {
+  color: var(--text-primary);
   text-decoration: underline;
 }
 
