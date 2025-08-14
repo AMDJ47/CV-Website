@@ -107,7 +107,6 @@ body {
 
 .nav-link:hover {
   background: var(--lilac-hover);
-  color: var(--white);
   transform: translateY(-2px);
 }
 
@@ -284,42 +283,34 @@ body {
 
 .about-card:hover {
   background: var(--lilac-hover);
-  color: var(--white);
 }
 
 .experience-card:hover {
   background: var(--coral-hover);
-  color: var(--white);
 }
 
 .education-card:hover {
   background: var(--mint-hover);
-  color: var(--white);
 }
 
 .skills-card:hover {
   background: var(--peach-hover);
-  color: var(--white);
 }
 
 .projects-card:hover {
   background: var(--rose-hover);
-  color: var(--white);
 }
 
 .languages-card:hover {
   background: var(--sky-hover);
-  color: var(--white);
 }
 
 .contact-card:hover {
   background: var(--sunset-hover);
-  color: var(--white);
 }
 
 .references-card:hover {
   background: var(--tertiary-gradient);
-  color: var(--white);
 }
 
 .card-header {
@@ -341,12 +332,6 @@ body {
   font-size: 2rem;
   font-weight: 700;
   color: var(--text-primary);
-}
-
-.card:hover .card-header h2,
-.card:hover .card-header i {
-  color: var(--white);
-  -webkit-text-fill-color: var(--white);
 }
 
 .card-content {
