@@ -282,36 +282,46 @@ body {
   box-shadow: var(--shadow-hover);
 }
 
-.about-card:hover {
-  background: var(--lilac-hover);
-}
-
-.experience-card:hover {
-  background: var(--coral-hover);
-}
-
-.education-card:hover {
-  background: var(--mint-hover);
-}
-
-.skills-card:hover {
-  background: var(--peach-hover);
-}
-
-.projects-card:hover {
-  background: var(--rose-hover);
-}
-
-.languages-card:hover {
-  background: var(--sky-hover);
-}
-
-.contact-card:hover {
-  background: var(--sunset-hover);
-}
-
+.about-card:hover,
+.experience-card:hover,
+.education-card:hover,
+.skills-card:hover,
+.projects-card:hover,
+.languages-card:hover,
+.contact-card:hover,
 .references-card:hover {
-  background: var(--tertiary-gradient);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card:hover h2,
+.card:hover h3,
+.card:hover h4,
+.card:hover p,
+.card:hover span,
+.card:hover li,
+.card:hover strong,
+.card:hover .company,
+.card:hover .duration,
+.card:hover .location,
+.card:hover .project-duration,
+.card:hover .language-name,
+.card:hover .institution {
+  color: var(--text-primary) !important;
+}
+
+.card:hover .responsibilities li,
+.card:hover .project-item li,
+.card:hover .contact-info,
+.card:hover .reference-email,
+.card:hover .reference-phone {
+  color: var(--text-secondary) !important;
+}
+
+.card:hover .duration,
+.card:hover .location,
+.card:hover .project-duration {
+  color: var(--text-light) !important;
 }
 
 .card-header {
