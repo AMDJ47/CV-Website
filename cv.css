@@ -276,11 +276,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
-}
-
 .about-card:hover {
   background: var(--lilac-hover);
 }
@@ -311,6 +306,11 @@ body {
 
 .references-card:hover {
   background: var(--tertiary-gradient);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
 }
 
 .card-header {
